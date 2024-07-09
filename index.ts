@@ -116,7 +116,7 @@ for(const key of map.keys()) { //kveradardzni iterator ira keyeri
     console.log('key', key)
 }
 
-//User case - orinak typescriptum kamayakan stringneri hamapatasxanutyan mej e drvats 
+// User case - orinak typescriptum kamayakan stringneri hamapatasxanutyan mej e drvats 
 // inch vor ban function, object, ... u type dra chgitenk kara lini. karank ogtagortsenk object bayc de aydkan sirun
 // motecum chi, map-y henc dra dem e ughvats, (orinak angularum paramMap vor vercnum enk, url hamapatasxan parametreri
 // anunnerov Map e sarkum ugharkum mez)
