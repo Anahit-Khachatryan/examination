@@ -35,3 +35,5 @@ class ProductDependancy {
 let test = new ProductDependancy(new EmailReceiptSender)
 console.log('test', test)
 //loose coupling apahoveln e
+// sa nshanakum e vor producty kaxvats konkret receipt send anogh functionalitii classi tesakic, aysinkn bolori het i
+// vijaki e asxatel. aysinkn dependancy inversion unenk kaxvatsutyuny arandznacnum enk, ov e ogtgortselu producti hamar inkn el kogtagortsi hamapatasxan strategyn
