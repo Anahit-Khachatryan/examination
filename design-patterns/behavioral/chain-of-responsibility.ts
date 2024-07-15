@@ -1,0 +1,2 @@
+// vonc e ashatelu event-i het kapvats flow, orinak addEventListneri depkum event linsternery irar het kap chunen-teghyak chen iraric, isk es depkum teghyak en iraric
+//unenk event irar hetevic petka nuyn eventi vra mi kani consumerner ashxaten - angular HTTP interceptornery - handle methody stanum er request u next-ov hajord hanlern er kanchum
