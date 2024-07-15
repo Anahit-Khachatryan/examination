@@ -1,0 +1,1 @@
+// dynamicoren classi vra inch vor property ev behaviour avelacneln e(metadata), irenic function e nerkayacnum. Inheritance-i poxaren espes aveli lav implement enk anum

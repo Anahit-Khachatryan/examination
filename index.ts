@@ -137,3 +137,9 @@ for(const key of map.keys()) { //kveradardzni iterator ira keyeri
 // et sarqac objecty tanum a, sovorakan map-i depqum cher tanum
 // ibr weak reference-ner a pahum i tarberutyun iranc sovorakan tesakneric
 // mekel weak-eri vra iteracia ches kara anes i tarberutyun sovorakanneri, es nor nayeci moracel ei
+
+// JavaScript Symbols are a new type of primitive data type 
+// Symbols are unique and immutable, so they can be used as unique identifiers in objects and classes.
+// Symbols can be used to create private properties and methods in classes.
+// Symbols are useful for creating constants that can be shared across different parts of your code.
+// https://playcode.io/javascript/symbols
