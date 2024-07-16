@@ -29,11 +29,20 @@ class UserActions {
       }
     }
 
+    restoreFromState(previouseState: {currentActionType: 'click' | 'input' | 'dblclick'}) {
+        this.currentActionType = previouseState.currentActionType
+    }
+
     private snapshot() {
         return {
             currentActionType: this.currentActionType
         }
     }
+}
+
+interface Memento<T> {
+    restoreFromState(previouseState: T): void;
+    snapshot(): void;
 }
 
 const actions = new UserActions();
@@ -43,6 +52,7 @@ actions.registerEvent('dblclick');
 actions.registerEvent('input');
 
 actions.undo();
+actions.restoreFromState({currentActionType: 'input'})
 console.log(actions.currentActionType);
 
 
