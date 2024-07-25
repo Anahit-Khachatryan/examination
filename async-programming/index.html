@@ -1,0 +1,34 @@
+ Async programming
+ Synchronous programmingi jamanak miajamanak miayn 1 hramana katarvum, sync-i jamanak yst hertakanutyamb en execute linum
+ 
+ Async - http request  - asenk inch vor gortsoghutyun kanenk erb ardyunk lini, isk minch da kanenk urishnery, minchev da ka, handle karvi
+
+ Erb call e katarvum, operativ hishoghutyan mej steghtsvum e tread(tel), kopit aselov mi hat environment e vortegh hramannery shghtayabar katarvum en
+
+1 treadi shrjanaknerum ameninch synca, bayc ete karoghanank bacenk mi kani threadner, karank anenk parallelismi imitacia
+
+Erb bacum enk mi kani thread, amen threadum hramanner en grvats vor petka katarven, hertov ed hramannery katarvum en, Bayc
+operacion hamakargy kara kangnecni threadneric meky u trni myus threadi vra, mi kich el na sksi katarvel. Npataky nranuma vor tsanr
+block anogh operacianer, block chanen aveli tetev operacianerin. Orinak unenk server vor clienteric tarber requestnera stanum u unenk request
+vory premitiva vor kara katari arag response ugharki, meky bard, hima entadrenk bardy ekav sksuma katarvel, en puchury vor kareli er switch anel het gal chi katarvi, ete myus thread chbacenk arvi
+
+Multiple threadi problemnery`
+Working on the same data - nuyn datan enk orinak ogtagortsum mi tegh poxenk datan en myus teghum kara xndir arajana
+Anoroshutyuny - operation hamakargna voroshum vor threadic heto vory ani, vori vra trni
+Kara arajacni djvar buger
+
+Javascripty chuni multithreading, ashxatum e mi threadov
+Asyncronutyuny js-um hnaravor e linum stanal . js-y iranic durs execute linum - browseri depkum broswery ira web api-nerov
+u multithreading bery inkna ira vra vercnum, ayl anum e en environmenty vortegh inky execute e linum
+Web API-environmentin dimelu dzevern en ` himnakanum 3-n en` xml httprequest-y, DOM-i het ashxatogh api-n en(addEventListener...) u timeoutneri en timerneri het ashxatogh
+
+Menk signal enk talis irank drsi environmentum gorts en anum, mez talis ardyunk. Menk asum enk senc event kara teghi unena u asum enk ed eventi teghi unenalu jamanak ashxati es function(callback).
+Bolor functionery execute en linum callstack-i mej
+Web Api-nery erb eventnery teghi en unenum, gtnuma vor callbacky petka irkanacvi avelacnum en callback queue-um` priority queue(herti mej enk kangnum),
+eventloopy gnum nayuma callstacky ete likna ban chi anum, ete callstacky datarka, pttvum e , gnum e callback queue, tanum dnum e callstacki mej
+
+Event Loop - monitoringov e zbaghvum callback queue u call stacki-i
+
+
+
+
