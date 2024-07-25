@@ -1,0 +1,108 @@
+inch karelia domi masin imanal - dasy dra masina, voch te inch karelia anel` IntersectionObserver, MutationObserver
+Minchev es ujegh web applicationery sarkely himnakan xndiry DOMn er, kam native kam jquery-ov er arvum, add-ov, appendov
+bayc Angular, React ban dranc het sa poxvec- vory heshtacnum e gortsy
+Bayc zugaher xndirner kan voronk hesht chenk lutsum - meky renderingi processy optimizacnely, orinak Angularum tanum enk dnum enk
+componenti changeDetectionStrategyn onPush, aveli arag haskana ed componenty rerender ani te che, bayc dranov renderingy chenk optimizacnum
+ayl angulari voch edkan optimal gorts anely
+Menk uzum enk global renderingy aveli shat lavacnenk, UI nkarenk lazy, u aveli lav api-ov ashxatenk
+Himnakan use casery`
+Scroliingi jamanak data load anel
+Lazy loading - orinak imagenery lazy load anel, ete orinak nkary amenatakna, ete scroll chi arel inchi render anely
+Elementneri ereval cherevaly
+Animationery ev ayln
+
+Hima 2 hat api e nor avelacel` IntersectionObserver ev MutationObserver
+IntersectionObserver - sa mi hat class e, vory hnaravorytyun e talis mi elementi kam viewporti hatum ka te che. 
+voch te gtnvum e ayd elementi mej - da parza orinak body-i mej bolory gtnvum en, ayl ed viewum erevum e te che
+Orinak`
+1. Lazy-loadingy imagneri - eji takna der chi erevum, scroll arecir henc haytvec nor ed jamanak render anel(fileserverin chenk dimi en jamanak erb ed nkary chi el erevum)
+2. Infinite scrollingy - orinak facebookum haverj scroll, haytnvec viewportin, nor myus masna anum
+3. Kam govazndery vor haytnvum en u inch vor hashvark e petk anel - vor orinak es userin cuyca tvel. messageneri read unreadnery
+
+IntersectionObserveri ashxately - observery eventner e ugharkum. Steghtsum ed objecty hatuk optionerov, talis enk root element(talis enk vori mej petka haytnvi),
+marginy, u talis enk intersectioni detection - aysinkn asum enk viewportum kani tokosov haytvi vor hamarenk intersection,
+myusov talis enk targetElement-vor elementina petk hetevel. 2-rd parameterov el callback erb intersectiony stana ed kanchi, informationa talis inch intersectioner eghan
+
+IntersectionObserver
+<html>
+    <style>
+        div {
+          width: 80%;
+          height: 400px;
+          border: 1px solid red;
+          margin: 5px 
+        }
+    </style>
+    <body>
+        <div>Content</div>
+        <div>Content</div>
+        <div>Content</div>
+        <div>Content</div>
+        <div>Content</div>
+        <div>Content</div>
+        <div id="last">Content</div>
+
+      <script>
+        const observer = new IntersectionObserver((entries) => {
+            console.log('entry', entries)
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    console.log('entered the viewport') // 
+                } else {
+                    console.log('left the viewport')
+                }
+            })
+        }, {root: document.body, threshold: 1.0}); //threshold - asum enk inchkan mtni viewporti mej vor intersection hamarvi
+        const target = document.querySelector('#last');
+
+        observer.observe(target);
+      </script>
+    </body>
+</html>
+
+MutatationObserver - class e vory tuyl e talis detect anel dynamic popoxutyunnery DOM-i tree-um(user-y click arec, mi ban delete arec ev ayln)
+ogtakar e nayev app-i perfomance monitor anelu hamar, orinak amanak pahel tesnes inchkan jamanakum jnjvec
+Nshum enk voronk enk monitor anum, identifying target node, changeDetectioni root, u callback enk talis henc linuma kanchuma
+Orinakum uzum enk rootic sksats observation anel
+<html>
+    <style>
+        div {
+          width: 80%;
+          height: 400px;
+          border: 1px solid red;
+          margin: 5px 
+        }
+    </style>
+    <body>
+        <div id="content">
+            <div>Content</div>
+            <div>Content</div>
+            <div>Content</div>
+            <div>Content</div>
+            <div>Content</div>
+            <div>Content</div>
+            <div id="last">Content</div>
+        </div>
+       
+
+      <script>
+        const root = document.querySelector('#content');
+        const last = document.querySelector('#last');
+
+        const observer1 = new MutationObserver(() => {
+           console.log('working')
+        })
+
+        observer1.observe(last, {attributes: true, childList: true}) // es depkeru enk uzum
+        // observer1.observe(root, {attributes: true, childList: true}) // es depkeru enk uzum
+
+
+        setTimeout(() => {
+            last.id = 'someID'
+            // last.parentNode.removeChild(last) // sa el erb dnum enk root verjin chily rooti jnjum enk ashxatum e
+        },4_000) // petka tesnenk observery teghyak kpahi vor 4 seconds heto id poxvec
+      </script>
+    </body>
+</html>
+
+

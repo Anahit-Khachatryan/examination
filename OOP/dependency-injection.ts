@@ -164,7 +164,7 @@ providers: [
 // useFactory -i orinak - uzum enk ynenc provider steghtsel vor inch vor paymanic kaxvats kara dependancy unenal kara chunena. runtime e da voroshvum - orinak TranslateLoader e- asum es togh TranslateLoader-i tak ashxati im grats classy espes es anum
 // provide: TranslateLoader,
 // useFactory: createTranslateLoader,
-// deps: [HttpClient],
+// deps: [HttpClient], // sranov el parameter enk talis
 
 // export function createTranslateLoader(http: HttpClient): any {
 //     return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
