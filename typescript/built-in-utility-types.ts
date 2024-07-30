@@ -97,6 +97,46 @@ function addTuple(tp: Parameters<typeof add>) { // tp: [number, number]bayc ete 
 addTuple([1,2])
 
 
+//ConstructorParameters<T> - Parameters sa f-n er vercnum, constructor parametery veraberum e classin
+class A {
+    constructor(a: number, b: string) {
+
+    }
+}
+
+type ParamsA = ConstructorParameters<typeof A>; // vercrecink classt ira constructori mejic hanecink parametereri typery
+const paramsa: ParamsA = [6, 'string']
+
+function creaateAInstance(...params: ConstructorParameters<typeof A>) {
+    return new A(...params)
+}
+
+const instance = creaateAInstance(6,'a')
+
+//ReturnType<T> - functioni veradardzvogh typen e veradardznum
+
+function addR(a: number, b: number) {
+    return a + b;
+}
+
+function log(info: ReturnType<typeof addR>) { // uzum enk addR ardyunky log ani
+    console.log(info);
+}
+
+log(addR(4,5))
+
+
+//InstacneType - stanum e inch vor constructor, veradardznum e ir instance-i typey
+
+class BI {
+    name: string = ''
+}
+
+type BInstanceType = InstanceType<typeof BI>; // sa ashxatum e en cituacianerov erb chgitenk B inch e
+
+//mi kanisn el el ban chem arel
+
+
 
 
 
