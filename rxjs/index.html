@@ -1,0 +1,35 @@
+RXJS - reactive tsragravorum e, lib e vor kareli e vercnel cankacats projectum ogtagortsel
+RXJS - i himkum ynkats e Stream-y(հոսք) - vory tvyalneri sharan e vory vor jamanaki yntackum update e linum
+RXJS -i praktik hamematutyun orinak vor grum enk addEventListener click enk anum, jamanaki yntackum event e teghi unenum menk reakcia enk talis mer callback-ov. 
+RXJS-um ka fromEvent, vory vor tuyl e talis browser event sarkel rxjs Stream-
+RXJS asum e ameninch kara stream lini, nuynisk voch ansync bany, orinak array kara hat hat ta
+
+Inch e nshanakum Observeable
+Observable -y class e vory iranic ed streamn e nerkayacnum
+Observable iranic nerkayacnum e push systema(erb menk grum enk function, ed function hamarvum e pull systema, erb menk function kanchum enk vonc vor tvyalnery kashum enk, controly mer dzerkn e). 
+Bays asyncneri depkum orinak clicki depkum, chgitenk erb e teghi unenalu, inch vor dzev signal kta erb eghav u dra himan vra gortsoghutyun anel sa push systemaya
+Observer-y drank listenernern en - ditordnern en , addeventListeneri orinakov clickneri stream observeablen e, isk observery callbacky
+
+Observer-y object e vory hetevum e observable-in, inky uni 3 method.OnNext-ov lsum e hertakan ekats arjeky,
+onComplete-ov - erb streamy verjacav, onError - error handleingi hamar
+
+Subscribe(bajanordagrvel) erb grum enk .subscribe da veradardznum e SUBSCRIPTION object - mi hat object e vory nerkayacnum e mi
+depk es observer-in subscribe linelu. Ete nuyn observeable-in subscribe linenk mi kani angam amen angam tarber subscriptioner en linelu u 
+ayd subscriptionnery karank cancell anenk. Karank nayev subscriptionnery irar het combinacnel
+
+Memory Management
+Observable-y referencener e pahum Observerneri vra, henc eventy teghi e unenum hertov ugharkum e(patkeracnenk obervernery qcuma arrayum hertov talis e)
+Kani vor garbage collectory referencnerov e ashxatum, spasum e vor reference chlini vor jnji. Observable karogha unenk chi ashxatum, ashxatec verjacav bayc complete chi eghel
+Da nshanakum e vor bolor functionery vor steghtsel enk mnum en ed array-i mej u chen jnjvum. Orinak mi ejic gna myus ej ete senc lini meka reference pahatsa
+dra hamar unsubscribe shat karevor e
+
+Observeabl-i u Promisei tarberutyuny
+Observable-y emit e anum lots of value, promise emit e anum mi arjek
+Obs-n uni operatorner shat vor kara transformacni streamy, isk promise transform e linum manually - grenk .then mejy grenk veradardznenk
+Observablenery karank combinacnel(shat tarber dzev ka - forkJoin, combineLatest, zip, merge ev ayln), nuyn el Promisenery(Promise.all, race, allSetteled)
+Observable karank Promise stanank (from-ov), Observablen el karank sarkenk Promise(ughaki spasum e complete lini, amenaverjin arjekn e veradardznum Promise-i arjek)
+
+
+Operatornerov hnaravor e streamy poxel, mutate anel
+
+
