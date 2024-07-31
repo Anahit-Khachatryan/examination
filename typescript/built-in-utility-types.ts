@@ -1,4 +1,4 @@
-//Partial
+//Partial tuyl e talis stanal nor type vori bolor keyery nullable en
 function updateOrderInDatabase(order: Partial<Order>) {
  // save order to database
 }
@@ -125,6 +125,11 @@ function log(info: ReturnType<typeof addR>) { // uzum enk addR ardyunky log ani
 
 log(addR(4,5))
 
+function f() {
+    return 6 // entadrenk heto poxecir string
+}
+let nz: ReturnType<typeof f> = f(); 
+
 
 //InstacneType - stanum e inch vor constructor, veradardznum e ir instance-i typey
 
@@ -135,6 +140,8 @@ class BI {
 type BInstanceType = InstanceType<typeof BI>; // sa ashxatum e en cituacianerov erb chgitenk B inch e
 
 //mi kanisn el el ban chem arel
+
+// tuple fixvats arraty e, konkret kanaki konkret arjeknerov
 
 
 

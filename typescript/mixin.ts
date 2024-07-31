@@ -31,3 +31,17 @@ class MyClass extends notBasicMixin(basicMixin()) {
 
 const myInstance = new MyClass();
 console.log(myInstance.method());
+
+
+// type Constructor<T = {}> = new (...args: any[]) => T;
+
+// function DestroyMixin<T extends Constructor<{}>>(Base: T) {
+//   return class extends Base implements OnDestroy {
+//     ngDestroy = new Subject();
+
+//     ngOnDestroy() {
+//       this.ngDestroy.next();
+//       this.ngDestroy.complete();
+//     }
+//   };
+// }
