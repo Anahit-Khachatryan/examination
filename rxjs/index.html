@@ -36,3 +36,23 @@ Bayc erb asum enk mutate anel chi nshanakum orginal streamy poxel, Observable-y 
 
 Combining Observable - mi kani obsevablener irar het combinacnel - erb mez mi kani event e hetakrkrum u karan async linel , u tarber jamanakner e galis taratesak scenarner linen bolory verjanan nor, amen galuc tank tarber baner karan linen
 
+Scheduler-y karavarum e te subscriptionery erb en skselu, notification erb en deliver linelu.
+AsyncShedulery takis setTimeout e ogtagortsum, karank asenk es executionContext verjana es tasky ari
+
+Cold and hot observablener
+Hot-y nrank en vor datanery emit en anum ankax subscription ka te che. Ete subscribe chlinenk inky ed valunery emit e anum ughaki lsogh chka. fromEvent - hot e
+Cold petk e anpayman subscribe lini. - coldi orinak e of
+Hnaravor e cold sarkel hot
+
+Bad u Best Practice
+1. If-i poxaren filter kam partition(sa nayev orinak aj koghmum mi ban e petk lcsnel dzaxum myus, partitionov kbajanenk knkarenk)
+2.Subjectnery karank poxancenk vorpes observable, ete grum enk subscribe u mez edtegh bolor methodnery petk en
+3. Merge - ete mez petka nuyn action anel tarber streamneri vra, ete mez hetakrkir chi inch dataya, ayl hetakrkir e event e eghel orinak, mi kani stramer kpcnum enk, merge enk anum(petk e hishel vor ajreknery arandzin -arandzin en galu)
+4. ForkJOin - Promise.all-i nman, ete uzum enk observable-y complete linen nor datan handle anel - sa httpCalleri depkuma himanakanum ogtagortsvum
+5. CombineLatest - Ete mez lriv hin emit arats valunery - sa shat baner ugharkogh obsevableneri hamara, chi spasum complete lini stacav ugharkum e
+6. Zip - isk ete bolorn e petk uremn zip, combineLatest-ic tarbervum e zip-y indexnerova ugharkum, 2 hat observable ete unenk ugharkum e 2-i arajin ugharkats, heto 2-i erkrord ugharkatsy, ete 2-rd shata ugharkel arajiny 4, verjin ugharkatsnern enk korcnelu ete chugharki. Isk combineLatest vory vor meky tekuz ugharkec kugharki myusneri hin arjeknerov, es depkum karank bac toghenk arjek minchev bolori ugharkatsy
+7. MergeMap-i u switchMap-i tarberutyuny. Ete user-y inch vor bana search anum ogtagortsum enk switchMap(kani vor naxkiny shprtenk). isk ete usery inch vor bana edit anum(iharke nayats inch e edit anum), - kaxvats case-eric mergeMap karogha hetn el inch vor ban(orinak noric http call es anum)
+8. Tap side effectneri hamar e(functional programmingin ela dem). ete petka obs subscribe linenk u ira mej function er ogtagortsenk, orinak inch vor reactive forma disable enk anum(petka control.disable anenk), aveli lava tapum grel, kan subscribeum ed grel 
+9. toArray - anverj streami vra ogtagortseluc - sra orinaky toArray-um gratsa. 
+10. subscribe-i poxaren karank async pipe ogtagortsel - inky subscreibe u unsubscribe klini. isk ete anum enk petk chi shat ban mejy lcnel
+Type inference-y vor bacahayt typery chenk grum, bayc ts-y haskanum e
