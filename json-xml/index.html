@@ -1,0 +1,50 @@
+JSON uses key-value pairs to create a maplike structure.
+JSON only supports a limited range of data types like strings, numbers, and objects
+
+XML is a markup language—a subset of SGML with a structure similar to HTML. It stores data in a tree structure 
+XML is more flexible and supports complex data types like binary data and timestamps. 
+you can also parse JSON faster than XML.
+	
+You can parse JSON with a standard JavaScript function.
+You need to parse XML with an XML parser.
+JSON is a data format that extends from JavaScript. It does not use tags, which makes it more compact and 
+easier to read for humans. JSON can represent the same data in a smaller file size for faster data transfer.
+
+JSON.parse() մեթոդը վերցնում է JSON string և փոխակերպում է այն JavaScript օբյեկտի:
+const jsonString = '{"name": "John", "age": 30, "isStudent": false}';
+const obj = JSON.parse(jsonString);
+
+console.log(obj.name); // Outputs: John
+console.log(obj.age); // Outputs: 30
+console.log(obj.isStudent); // Outputs: false
+
+JSON.stringify() մեթոդը վերցնում է JavaScript օբյեկտ կամ արժեք և փոխակերպում է այն JSON ֆորմատով string-ի:
+const obj = {
+    name: "John",
+    age: 30,
+    isStudent: false
+};
+
+const jsonString = JSON.stringify(obj);
+
+console.log(jsonString); // Outputs: {"name":"John","age":30,"isStudent":false}
+
+SON-ում հնարավոր չէ պահպանել ֆունկցիաներ, 
+Կան որոշ գրադարաններ, որոնք թույլ են տալիս սերիալիզացնել (serialization) և դեսերիալիզացնել (deserialization) ֆունկցիաները,
+ օրինակ՝ flatted, superjson:
+ const SuperJSON = require('superjson');
+
+const obj = {
+    name: "John",
+    sayHello: function() { console.log('Hello!'); }
+};
+
+const serialized = SuperJSON.serialize(obj);
+console.log(serialized);
+
+const deserialized = SuperJSON.deserialize(serialized);
+deserialized.sayHello(); // Outputs: Hello!
+
+
+
+https://aws.amazon.com/compare/the-difference-between-json-xml/
