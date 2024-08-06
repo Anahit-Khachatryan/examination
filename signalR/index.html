@@ -1,0 +1,30 @@
+SignalR-ը գրադարան է, որը թույլ է տալիս ավելացնել իրական ժամանակի վեբ ֆունկցիոնալություն ASP.NET ծրագրերին:
+Այն հնարավորություն է տալիս սերվերին, ուղարկել հաղորդագրություններ հաճախորդին անմիջապես, առանց հաճախորդի հարցում 
+կատարելու:
+Հաբեր (Hubs): Հաբերը սերվերի և հաճախորդի միջև երկկողմանի հաղորդակցությունն ապահովող բարձր մակարդակի API են:
+SignalR-ը ավտոմատ կերպով ընտրում է լավագույն մեխանիզմը՝ WebSockets, Server-Sent Events, Long Polling, ըստ հաճախորդի 
+և սերվերի հնարավորությունների:
+
+import * as signalR from "@microsoft/signalr";
+
+// Ստեղծում կապի օբյեկտ
+const connection = new signalR.HubConnectionBuilder()
+    .withUrl("/chatHub")
+    .build();
+
+// Սկսում կապը
+connection.start().catch(err => console.error(err.toString()));
+
+// Հաճախորդից սերվերին հաղորդագրություն ուղարկելը
+document.getElementById("sendButton").addEventListener("click", event => {
+    const message = document.getElementById("messageInput").value;
+    connection.invoke("SendMessage", message).catch(err => console.error(err.toString()));
+    event.preventDefault();
+});
+
+// Սերվերից հաճախորդին հաղորդագրություն ստանալը
+connection.on("ReceiveMessage", (user, message) => {
+    const msg = document.createElement("div");
+    msg.textContent = `${user}: ${message}`;
+    document.getElementById("messagesList").appendChild(msg);
+});
