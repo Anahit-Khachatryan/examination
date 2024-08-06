@@ -1,0 +1,28 @@
+մենք microsoftի կլիենտով ենք միանում
+եթե կարճ, SSO-ի իմաստը նրանում ա, որ եթե ինչ որ ուրիշ application-ում ակաունտ ունես, կարողանում ես էդ ուրիշ
+ էփփի ակաունտով լոգին լինես
+ խոսքի ոնց ա, որ քո գուգլի ակաունտով կարողանում ես լիքը տեղ լոգին լինես
+ տենց էլ մեր մոտ մայքրոսոֆթի ակաունտով ես կարողանում
+ 
+
+ Single Sign-On (SSO) Microsoft Azure Active Directory (AAD) օգտագործելով MSAL (Microsoft Authentication Library) եւ 
+ MsalBroadcastService-ը։ Ներկայացված լուծումը գործածում է MSAL Angular գրադարանը SSO-ի տարբեր հարմարեցված գործողությունների
+իրականացման համար։
+
+MsalService: Այս ծառայությունը ապահովում է Microsoft Identity Platform-ի հետ կապի գործառույթները, ներառյալ ինքնագրանցումը 
+եւ թողտվությունը:
+MsalBroadcastService: Լսում է MSAL-ի կողմից ուղարկվող իրադարձությունները, ինչպիսիք են loginSuccess, acquireTokenSuccess, 
+logoutSuccess եւ այլն:
+TokenService: 
+
+his.msalBroadcastService.msalSubject$
+  .pipe(
+    filter(
+      msg =>
+        msg.eventType === EventType.ACCOUNT_ADDED ||
+        msg.eventType === EventType.ACCOUNT_REMOVED
+    )
+  )
+
+  լսում է MSAL-ի կողմից ուղարկվող իրադարձությունները, երբ հաշիվներ ավելացվում կամ հեռացվում են։ Եթե բոլոր հաշիվները 
+  հեռացվում են, համակարգը տեղափոխում է օգտատիրոջը դեպի լոգին էջը։
