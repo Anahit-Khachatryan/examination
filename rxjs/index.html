@@ -33,11 +33,19 @@ Observable karank Promise stanank (from-ov), Observablen el karank sarkenk Promi
 Operatornerov hnaravor e streamy poxel, mutate anel
 Mutation aselov nkati unenk mek mek menk unenk mi type-i stream bayc mez petk e ayl type-i. sa karank operatorneri mijocov tesky kam behaviory poxel
 Bayc erb asum enk mutate anel chi nshanakum orginal streamy poxel, Observable-y immutable en, irank chen poxvum, ughaki iranic stanum enk mi hat nor Observable
-
+Araj bolor operatorner methodner ein Observable-i vra, heto da poxvec sarkvec mi hat pipe method, isk mnacatsy dardzan functioner, voronk impoer petk e 
+anel u pipe-in tas. Npataky kani vor observable shat mets class er dardzel, u applicationum karar petk lini orinak 5 hat operator, bayc mnacatsy
+tree shake chi arvum(chi heracvum),kani vor classi mej e grvats, erb build anenk application ed bolor methodnery galu mnalu er codi mej
+Erb menk pipe-in ed functiony talis enk , inky vercnum e orginal observable-y, iranic stanum e nor observable
 Combining Observable - mi kani obsevablener irar het combinacnel - erb mez mi kani event e hetakrkrum u karan async linel , u tarber jamanakner e galis taratesak scenarner linen bolory verjanan nor, amen galuc tank tarber baner karan linen
 
-Scheduler-y karavarum e te subscriptionery erb en skselu, notification erb en deliver linelu.
+Scheduler-y karavarum e te subscriptionery erb en skselu, notification erb en deliver linelu. Karas ogtagortses observable-i het ases es observable senc schedule ara
+Orinak asyncshedule ognutyamb karank sync observable sarkenk async(takis setTimeoutn e ogtagortsum)
 AsyncShedulery takis setTimeout e ogtagortsum, karank asenk es executionContext verjana es tasky ari
+AsapSheduler - high priority ashxatogh task e, Promisneri logikayov e ashxatum, sa erb petka aveli arag lini kan sovorkan taskery
+QueueSheduler - shat eakan tarberutyun chuni async-ic, queue mej e lcnum
+AnimationFrameSheduler - erb animationer es havakum, datayic kaxvats anyndhat petka repaint anel, setTimeout hashvi chi arnum GPU capability-nery, 
+callStackn en lcnelu, mez petka kadrer, te kani kadr klini , mez hamar da voroshely djvar e, 
 
 Cold and hot observablener
 Hot-y nrank en vor datanery emit en anum ankax subscription ka te che. Ete subscribe chlinenk inky ed valunery emit e anum ughaki lsogh chka. fromEvent - hot e

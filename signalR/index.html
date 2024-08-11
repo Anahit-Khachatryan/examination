@@ -28,3 +28,8 @@ connection.on("ReceiveMessage", (user, message) => {
     msg.textContent = `${user}: ${message}`;
     document.getElementById("messagesList").appendChild(msg);
 });
+
+connection օբյեկտը ստեղծված SignalR կապն է:
+on մեթոդը սահմանում է callback ֆունկցիա, որը կկատարվի, երբ "ReceiveMessage" իրադարձությունը տեղի ունենա:
+Երբ սերվերը ուղարկում է "ReceiveMessage" հաղորդագրությունը, նշված callback ֆունկցիան կկատարվի:
+user և message պարամետրերը պարունակում են սերվերից ստացված տվյալները:

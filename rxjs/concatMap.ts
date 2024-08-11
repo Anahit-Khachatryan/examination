@@ -19,3 +19,4 @@ interval(1_000).pipe(
 //switchMap hiny shprtum e den
 //mergeMap iranc kani miajamanak
 // ete uzum enk bolory linen bayc hertov concatMap enk ogtagortsum
+//concatMapy vonc vor switchMap-i hakaraky lini

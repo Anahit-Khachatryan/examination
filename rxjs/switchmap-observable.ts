@@ -1,5 +1,7 @@
-//SwitchMap-y projection e anum observable-y observable-i, da nshanakum e unes mi hat observable ir mej map es anum voch te sovorakan arjeki ayl urish oservable-i 
-//Orinak http call es anum u ed resulti himan vra nor call es anum,u vor call anes kstanas nor observable,  bayc uzum es verjin subsribeum mijini resulty vercnes 
+//SwitchMap-y projection e anum observable-y observable-i, da nshanakum e unes mi hat observable ir mej 
+// map es anum voch te sovorakan arjeki ayl urish oservable-i 
+//Orinak http call es anum u ed resulti himan vra nor call es anum,u vor call anes kstanas nor observable, 
+//  bayc uzum es verjin subsribeum mijini resulty vercnes 
 import { fromEvent, of, switchMap, map } from 'rxjs'
 
 

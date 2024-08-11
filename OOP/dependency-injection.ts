@@ -171,3 +171,5 @@ providers: [
 //   }
 
 
+// Amen DOM Node uni ir elementInjectory, amen elementInjector uni ir parent, documentic durs rootInjectorn e, dranic verev nullInjectory
+//MOdifikacnum es te vonc dimes - skipself bana

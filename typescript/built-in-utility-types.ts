@@ -82,7 +82,7 @@ const sa: StrickAddess = {
 
 // Parameters<T> - vercnum e function veradardznum e parametreri typery. Sa ogtakar e ete grum enk mi hat function, vory stanum e array, destructer enk anum, argumentery talis inch vor functioni
 //kam petka argumenty grenk dzerkov kam orinaky addTuple-ov berel em
-
+//Parameters 2 typeri mijev kapy pahelu hamar e
 function add(a: number, b: number) {
 
 }

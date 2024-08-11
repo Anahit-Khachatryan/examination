@@ -45,7 +45,7 @@ setTimeout(() => {
 
 //Time-Based - inervals, timers - sranc mijocov karank asenk eskan varkyan yndmijumnerov ashxati ev ayln, cancelable chen misht emit en anelu ete chogtagortsenk takeUntil ban
 
-timer(3_000, 1_000).subscribe(console.log) //mi argumentov setTimeout-ov e . sa harmar e erb uzum enk interval anel bayc inch vor jamanak heto
+timer(3_000, 1_000).subscribe(console.log) //mi argumentov setTimeout-i nman e ashxatelu . sa harmar e erb uzum enk interval anel vor inch vor jamanak heto ashxati
 interval(2_000).subscribe(console.log) // inch vor tsanr gortsoghutyun enk uzum anel, bayc datan arag-araga poxvum, menk tsanr gortsoghutyuny anyndhat anelov tsanranuma, asum enk es inch intervalov ara
 
 const interval$ = interval(1_000);
