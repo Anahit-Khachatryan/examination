@@ -22,7 +22,6 @@ function selectionSort(array: Array<number>) {
 const arr = [64, 34, 25, 12, 22, 11, 90];
 console.log(selectionSort(arr))
 
-
 // In this approach, the code implements selection sort by iterating through the array, 
 // finding the smallest element, and swapping it with the current element. 
 // Finally, it returns the sorted array.

@@ -29,3 +29,7 @@ console.log(binarySearch(list1, 8))
 // value is on the right side of our midpoint so we don't need left (or less then side) so we
 //  ditch the left side and look in the right side. We will keep doing that until we find our value.
 // O(log n)
+//  log(n)
+//  log a n - ayn tivn e a -n inch astijan barzracnem
+
+//  big O - qayleri hajordakanutyun else, orinak erb grenk array[5] - sa O(1)

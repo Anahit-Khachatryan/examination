@@ -1,3 +1,5 @@
+// https://www.youtube.com/watch?v=-DwnENU6cwI&list=PL6FAVjeZSsP0FphNv9zW-JDOog3R-oSjt&index=6
+
 // 25-ropeic OOP 2-rd das
 class SomeAngularService {
 
