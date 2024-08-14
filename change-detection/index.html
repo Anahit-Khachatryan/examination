@@ -1,0 +1,82 @@
+https://www.youtube.com/watch?v=-DwnENU6cwI
+
+Erb change detectiony ashxatum e  sksum e bindingnery stugel
+
+stugum e current value / hin  valuen vercnum hamematum e nori het, ete tarberutyun ka 
+primitivneri depkum henc urish value e update e anum (instance-ic vercnum e nor valuen)
+referencneri depkum kaxvats e te componenti changeDetectionStrategyn inch e drvats
+defaultov erb objecti referenc enk poxum eli update e linum, bayc nayev update klini erb orinak objecti
+property enk poxum, eli rerender e linum, nested propertynern el e recursive hamematum.
+Ete nor prop avelacnenk vonc vor chi rerender anum
+
+@Input depky
+ngOnChanges kanchvum e, erb inputi reference e poxvu, pahvum e previos u current, erb referenc e poxvum objectneri depkum nor ashxatum e
+
+changeDetection:ChangeDetectionStrategy.OnPush(onDefault) Enum e mi hat defaulti hamar mi hat el onPushi hamar
+Defaulti depky verevi nkaragratsn er, ete inch vor change eghav inky tsari bolori vrayov ancnum e bolori bindingnery stugum e
+
+OnPush
+1. Defaulti jamanak @Input objecti meji property poxecink rerender eghav, pushi depkyum che. Onpushi depkum bindingnery sksum e stugel erb referencne e poxel, tesnum e edtegh chi poxvel el chi ancnum childerin
+Ete parentin tvel es onPush, avotmat chilern el en darnum onPush, ete uzum enk child lini default, petka grel dzerkov childerum default
+2. Childi kam childeri mej inch vor eventHandler CD ashxatum e, bindingnery stugum e,  e ashxatum, 
+
+4. Observable enk bind arel async pipe-ov change detection աշխատում է push-ի դեպքում: sa menak async pipe-in e veraberum, myus observablenerin voch
+Սրանք բոլորը եթե իրա մեջ է կատարվում
+
+ChangeDetectorRefi-ի մեջ պահված է այնպիսի ֆունկցիոնալ, որ մենք կարողանանք changeDetection-ի հետ խաղալ
+detach ed componentic sksats vortegh sa kanchum e change detectiony anjatum e իր ու childer-ի համար
+reaatach-ov miacnum es
+detectChanges- vonc vor manual trigger anes angulari change detectiony, բայց էլի հաշվի է առնում մեր changeDetection Strategyn inch e drvats
+markForCheck - es componentum tvyal tsarum nshum e vor petk e check arvi, dranic heto erb change detection run lini, tesni edtegh mark e arvats, dra
+changery eli knayi
+checkNoChanges - error e talis ete inky kam ira mej change e teghi unecel - debuggeri dera eli tanum, developmenti hamar e
+
+defaulti jamanak katarvum e dirty checking
+nra depkum menak rederenceov e check anum
+markForCheck - grancum e check linogh component
+Signal parz observable, vori valuen karank kardank misht
+Signal generic e
+Signalu valuen kardum enks kanchelov ()
+update anelu dzevern en signali, 3 en , kanchum enk`
+set - ughaki arjek enk talis asum enk sa ko nor arjekn e
+update  - hin valuen e talis, gortoghutyun anum, stanum nor value 
+mutate - sra mej inch uzes anes - sa hanel en
+Ete valuen unes set es anum, ete arrayi nmana petka push ban anes, ed depkum mutate
+Signalnery sync en
+Erb signaly update e linum menk karum enk miangamic imanank te inky vonc update eghav u da 2 dzevov e linum` 
+computed(urish signalneric stanal nor signal) - stanum e mi hat function u inch veradardrec gnum e computed arjek
+ete ira nersi signalnery poxvec inkn ela poxvum
+Effect - callback tas eli gortsoghutyun anes
+toSignal - vercnum e observable sarkum e signal, vorpes 2-rd arjek uzum e initialarjek, erb krakec stanalu e nor arjek
+toObservable - signal observable-i es veratsum, bayc klini sync
+
+destroy = 
+takeUntilDestroyed 0 operatory vory unsubscribe linum e 
+
+@If - hima compile time e ashxatum, el directive chi
+track - for of, functioni poxaren edpes enk grum
+@empty - datarki depkum
+@switch - anum e 3 havasar checking hima, araj 2 havasarov er anum
+migration automate - hraman ka
+
+Menak StandAlone componentnern e linum defer load anel(Lazy Load)
+@defer {} nshanakum e componenty load ara erb parent componenty load lini, baci, dranic heto
+karas takic el loading gres cuyc tas ed contenery kani chi eghel
+Importum meka grum enk, ughaki angularna haskanum, deferic
+ka nayev error block, loading chstacvec error cuyc tal
+placeholer - erb load chi eghel es paymany cuyc tas heto sa cuyc tas(tarbera loadingic)
+defer(on viewPort) nshanakum e takic intersection observer e ashxatum , spasum e view haytnvi screeni mejnor
+kasras sran zugaher tas nayev on timer(5s) - sa nshanakum e ete nuynisk 5 vayrkyan heto chhaytnvec viewportum du vochi meka load ara
+karas nayev payman tas orinak @defer(on viewport, when cond) sa el paymanov es talis erb paymand true dardzav, sa es 2 paymanneric mekn u meky
+defer on viewport(greeting) sa karas anes nayev urish elementi het, aysinkn voch te es componenty mtav viewport, ayl inch vor urish meky
+on interaction sa ashxatum e erb anum es click kam mousedown
+nayev eli urish elementov karas anes  - on interaction(greeting)
+on hover - hoveri depkum 
+on immediate - defaulty sa e, henc bacec hasav estegh load e anum
+on timer(500ms)
+viewInitnery linum verjanum e nor sa e berum
+on interaction, prefetch on idle - idle-componenty renderec verjacav, asyncy verjacav, nor load ara
+bolory kamerov en ashxatum on esinch on 
+
+
+
