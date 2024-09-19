@@ -1,3 +1,17 @@
+//harcer
+//1. Directive shat, host element, vonc e haskanum vor elementi vra dni
+//2. writable, emunarable - 
+//3. Cookies, localStorage, SessionStorage - datan vortegh pahel
+//4. 
+
+
+
+
+
+
+
+
+
 class Stack<T> {
   private items: T[] = [];
 
