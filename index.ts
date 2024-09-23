@@ -4,7 +4,8 @@
 //3. Cookies, localStorage, SessionStorage - datan vortegh pahel
 //4. Security 
 //5. buildi jamanak inchi e filey heshavorum
-//6. 
+//6. hostDirectives,
+//7. control value accessor
 
 
 
