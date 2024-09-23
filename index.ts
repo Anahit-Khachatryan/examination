@@ -8,7 +8,13 @@
 //7. control value accessor
 
 
-
+// const obj = {
+//     value: 5,
+//     [Symbol.toPrimitive]() {
+//     return this.value
+//     }
+// }
+// console.log(+obj) - sa ughaki em grum, vonc anel vor + dnel u tpi orinak 5, erb grum enk +, inky takic kanchum e Symbol.toPrimitive fucntiony dra hamar karank objecti mej da avelacnenk u valuen veradardznenk
 
 
 
