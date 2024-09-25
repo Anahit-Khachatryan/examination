@@ -5,7 +5,7 @@
 //4. Security 
 //5. buildi jamanak inchi e filey heshavorum
 //6. hostDirectives,
-//7. control value accessor
+//7. control value accessor - https://drive.google.com/file/d/1FqukzW0r6pwGGKFOyNDO2ew44yCT_gXY/view dasi keseric sra masin e patmum
 
 
 // const obj = {
