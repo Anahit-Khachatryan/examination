@@ -6,7 +6,7 @@
 //5. buildi jamanak inchi e filey heshavorum
 //6. hostDirectives,
 //7. control value accessor - https://drive.google.com/file/d/1FqukzW0r6pwGGKFOyNDO2ew44yCT_gXY/view dasi keseric sra masin e patmum
-//8. lifecycle - ngAfterViewInit u ngAfterContentInit, u incha ng-contenty
+//8. lifecycle - ngAfterViewInit u ngAfterContentInit, u incha ng-contenty, ngAfterContentInit-i masin lesson 49-um xosum e, motavor 1.50 ropeic-https://drive.google.com/file/d/160WoyJ-MmQLDcYe7ezssfQRXVHAs63Fn/view
 //9. rxjs Exhaus operatoric e harcnum vonc vor
 
 // const obj = {
