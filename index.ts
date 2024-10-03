@@ -9,7 +9,7 @@
 //8. lifecycle - ngAfterViewInit u ngAfterContentInit, u incha ng-contenty, ngAfterContentInit-i masin lesson 49-um xosum e, motavor 1.50 ropeic-https://drive.google.com/file/d/160WoyJ-MmQLDcYe7ezssfQRXVHAs63Fn/view
 //9. rxjs Exhaus operatoric e harcnum vonc vor
 //10. image optimization - https://angular.dev/guide/image-optimization
-
+//11. *ngIf vonc e takic ashxatum
 // const obj = {
 //     value: 5,
 //     [Symbol.toPrimitive]() {
