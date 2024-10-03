@@ -18,6 +18,7 @@
 // }
 // 12. importnery vor ham import ham loadChildereni nmana arvum, dranic el harcrecin
 //13. WeakMap, WeakSet, Set, Map
+//14.Authinticate u authentication
 // console.log(+obj) - sa ughaki em grum, vonc anel vor + dnel u tpi orinak 5, erb grum enk +, inky takic kanchum e Symbol.toPrimitive fucntiony dra hamar karank objecti mej da avelacnenk u valuen veradardznenk
 
 
