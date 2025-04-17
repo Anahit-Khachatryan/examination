@@ -6,3 +6,7 @@ In Angular, NgModules are used to group functionality and hold all the dependen
 our applications, but it is important to understand that this can be done in other ways,
 too—ways that do not involve a high-level framework concept and can result in poorly
 structured code anyway
+3. Երբ մի կոմպոնենտում օգտագործում ենք օրինակ ուրիշ կոմպոնենտ, պետք է այդ կոմպոնենտը իմպոռտ անեինք ngModule-ում, իսկ եթե դա էլ sharedModule-ի մեջ է, միանգամից դա է imprt արած: Service-ը նույնպես եթե providedIn: 'roor' չի էլի ngModule-ում է
+4․ SharedModuly- երբ  declare and export reusable components/directives/pipes կտորները, դառնում էր շատ մեծ մոդուլ, որոշները ստեղծում էին multiple sharedModule-, ու տարբեր հարցեր էիր առաջանում, պետք է ամեն lazy-loaded feature module ունենա իրա shared-ը թե չէ
+5, Circular dependencies and harder debugging—In a codebase with many NgModules,it is fairly easy to introduce a circular dependency, which can become a very hard problem to solve. 
+
