@@ -10,4 +10,15 @@ structured code anyway
 4․ SharedModuly- երբ  declare and export reusable components/directives/pipes կտորները, դառնում էր շատ մեծ մոդուլ, որոշները ստեղծում էին multiple sharedModule-, ու տարբեր հարցեր էիր առաջանում, պետք է ամեն lazy-loaded feature module ունենա իրա shared-ը թե չէ
 5, Circular dependencies and harder debugging—In a codebase with many NgModules,it is fairly easy to introduce a circular dependency, which can become a very hard problem to solve. 
 "strictTemplates": true - որ սա այսպես ես դնում, իրա վրա որ պահում ես ասումա թե որտեղիցա գալիս -https://v17.angular.io/guide/language-service#angular-language-service tsconfig.json-ով ես կոնֆիգուրացիան տալիս
+Ինչ լուծում է դրա համար արվել, 
+
+2.2.1 Hierarchic shared modules - ամեն feature-ի լեվելի համար իրա sharedModule-է արվում, ու արդեն չի դառնու խառնաշփոթ
+2.2.2 Enter SCAMs - SCAMs, or Single Component Angular Modules - սա ամեն մի decleration իրա իրա մի մոդուլումա, էս տարբերակով Easier to track dependencies, easier to refactor and move around an application,  Easier to migrate to standalone. թերություն էլ
+որ կոդը աճումա, հիմա ամեն մեկը ունի իրա ngModule-ը, Newcomers would still have to learn about NgModules, Other modules can still be large—For instance, we would still need to import the
+CommonModule to use directives like *ngIf or [ngClass] and possibly add lots of
+references to our bundles we do not use
+
+
+
+
 
