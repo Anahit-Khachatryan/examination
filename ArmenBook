@@ -1,1 +1,8 @@
-
+1. StandAlone
+Ինչու հրաժարվել ngModule-ից
+1․ Դժվար է բացատրել նոր անգուլյար սովորողին, իսկ ngModule-ը հիմքն էր անգուլայրի։ Հենց main.ts entry point  է որտեղից սկսում է, ու այդտեղ bootstrapModule էր անում AppModule, որը նույնպես դժվար էր բացատրել
+2․  Ամեն նոր ընդունվողին պետք է պրոյեկտը ծանոթացնեիր ու լիքը հարցեր էր առաջանում՝ ինչի է application structured the way it is? Shared module ունեն, ինչի համ core module կա համ shared? և այլն, ամե
+In Angular, NgModules are used to group functionality and hold all the dependencies (like pipes, directives, and other components) together in a place called the compilation context. The claim is that NgModules simplify this process and help us structure
+our applications, but it is important to understand that this can be done in other ways,
+too—ways that do not involve a high-level framework concept and can result in poorly
+structured code anyway
