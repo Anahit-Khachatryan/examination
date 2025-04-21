@@ -29,8 +29,13 @@ return import('./pages/registration.component').then(
  } },-Note the addition of a specific loadComponent option on the route object. This option
 will take a function that will import the module (in this case, by module, I mean the file
 that contains the code, not NgModule) and load that particular component.
-2. Բայց եթե ունենք նմանատիպ մի քանի կոմպոնենտեր , որոնք պետքա lazyload անել, ոնց անենք։ Մոդուլի դեպքում հիմնականում բոլորը մի մոդուլի մեջ էին լինում ու խնդիր չէր առաջանում։
-
+2. Բայց եթե ունենք նմանատիպ մի քանի կոմպոնենտեր , որոնք պետքա lazyload անել, ոնց անենք։ Մոդուլի դեպքում հիմնականում բոլորը մի մոդուլի մեջ էին լինում ու խնդիր չէր առաջանում։Այդ դեպքում մի հատ այլ route ես ունենում բոլոր այդ կոմպոնենտներով
+ու loadChildren-ով այստեղ անում՝
+{ path: 'employees', loadChildren: () => {
+return import('./pages/employees/employees.routes').then(
+(m) => m.routes,
+);
+ } 
 
 
 
