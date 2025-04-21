@@ -54,4 +54,8 @@ following error "NullInjectorError: No provider for EmployeeService!" - 39 էջ
 the ngComponentOutlet directive receives a reference to a component class and renders it
 into the ng-container on which we have put the directive.
 5․ Migration-ի մասին է խոսում, - ոնց ngModeul-ով պրոյեկտը standalone սարքես, ինչ step-ով անես -ng g @angular/core:standalone
+6․forwardRef էջ 45 - The forwardRef function, as per the Angular documentation, is a function designed
+to allow developers to access references that are not yet defined; in other words, when
+the ProjectCardComponent is registered, it takes note that this one is going to use
+some reference when it is actually initialized. The other component, EmployeeCardComponent, will be defined as usual; no forwardRef is necessary there, and thus, circular dependency is avoided
 
