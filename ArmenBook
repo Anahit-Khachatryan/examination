@@ -36,6 +36,19 @@ return import('./pages/employees/employees.routes').then(
 (m) => m.routes,
 );
  } 
-
+3. Providing dependencies only to certain routes
+Որ service մենակ էս դեպքումա պետք, ամբողջ component-ի մակարդակով չլինի անում ենք սենց՝
+ 
+ path: 'employees', 
+ providers: [EmployeeService],
+ loadChildren: () => {
+return import('./pages/employees/employees.routes').then(
+(m) => m.routes,
+);
+ },
+},This code will make the EmployeeService only available in the routes inside employees.routes.ts, meaning only components routed in that configuration file will have
+access to this particular instance of EmployeeService. We can easily check it by navigating to LoginComponent, for instance, and injecting the EmployeeService into it
+via the constructor. If we check the application in the browser, we will surely see the
+following error "NullInjectorError: No provider for EmployeeService!" - 39 էջ
 
 
