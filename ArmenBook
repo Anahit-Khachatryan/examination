@@ -53,5 +53,5 @@ following error "NullInjectorError: No provider for EmployeeService!" - 39 էջ
 4. Listing 2.20 Importing the component on demand էջ 41 - սրա մեջ խոսում է օրինակ delete confirmDialog for load լինի էն ժամանակ երբ click անես - ngComponentOutlet, async-ով է անւում
 the ngComponentOutlet directive receives a reference to a component class and renders it
 into the ng-container on which we have put the directive.
-5․ Migration-ի մասին է խոսում, - ոնց ngModeul-ով պրոյեկտը standalone սարքես, ինչ step-ով անես
+5․ Migration-ի մասին է խոսում, - ոնց ngModeul-ով պրոյեկտը standalone սարքես, ինչ step-ով անես -ng g @angular/core:standalone
 
