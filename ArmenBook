@@ -19,6 +19,18 @@ CommonModule to use directives like *ngIf or [ngClass] and possibly add lots of
 references to our bundles we do not use
 
 
+StandAlone
+1. HttpClientModule - որ էլ չկա մոդուլ էն նրանք կլինեն լիբ բան որ standAlone չեն importProvidersFrom(moduleov es anum)
+2. իսկ օրինակ HTTPClien ունի անում են ենք provideHttpClient()
+3․ LazyLoad-component-ը բա ոնց ենք անում? - { path: 'registration', loadComponent: () => {
+return import('./pages/registration.component').then(
+(m) => m.RegistrationComponent
+);
+ } },-Note the addition of a specific loadComponent option on the route object. This option
+will take a function that will import the module (in this case, by module, I mean the file
+that contains the code, not NgModule) and load that particular component.
+2. Բայց եթե ունենք նմանատիպ մի քանի կոմպոնենտեր , որոնք պետքա lazyload անել, ոնց անենք։ Մոդուլի դեպքում հիմնականում բոլորը մի մոդուլի մեջ էին լինում ու խնդիր չէր առաջանում։
+
 
 
 
