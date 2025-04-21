@@ -50,6 +50,6 @@ return import('./pages/employees/employees.routes').then(
 access to this particular instance of EmployeeService. We can easily check it by navigating to LoginComponent, for instance, and injecting the EmployeeService into it
 via the constructor. If we check the application in the browser, we will surely see the
 following error "NullInjectorError: No provider for EmployeeService!" - 39 էջ
-4. Listing 2.20 Importing the component on demand 41 - սրա մեջ խոսում է օրինակ delete confirmDialog for load լինի էն ժամանակ երբ click անես - ngComponentOutlet, async-ով է անւում
+4. Listing 2.20 Importing the component on demand էջ 41 - սրա մեջ խոսում է օրինակ delete confirmDialog for load լինի էն ժամանակ երբ click անես - ngComponentOutlet, async-ով է անւում
 
 
