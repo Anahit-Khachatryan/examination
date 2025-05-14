@@ -3,3 +3,25 @@
 1․ HTTPClient որոշակի կախվածություն ունի իրա constructor-ով, ու եթե ուզենք դա էլ փոխանցենք, կդառնա մի հատ խճճված կոդ, չհաշված եթե dependency-ը փոխվի, մենք էլ մեր կոդում պետքա refactor անենք
 2․ Ամեն տեղ new անելով, ամեն կոմպոնենտում կստանանք մի հատ նոր instance, ու չենք կարողանա էնպես անենք օրինակ որ մի տեղ փոխենք բոլոր տեղերում փոխվի
 DI sysem-ը լուծում է այդ պրոբլեմը, վերցնում է թոքենը, որի reference ուզում ենք ստանալ ու վերադարձնում է reference առանց Instance duplicate անելու
+class InjectionToken<T> { 
+ constructor(public value: T) {}
+}
+class Injector {
+ private readonly dependencies = new Map<
+ InjectionToken<any>, any
+ >(); 
+ provide<T>(dependency: T): InjectionToken<T> { 
+ const token = new InjectionToken(dependency);
+ this.dependencies.set(token, dependency);
+ return token;
+ }
+ inject<T>(token: InjectionToken<T>): T { 
+ const dependency = this.dependencies.get(token) as T;
+ return dependency;
+ }
+ 
+Angular creates special injectors when our application runs, provides dependencies, and then injects them into components (directives, pipes, etc.) implicitly. 
+Any Angular application has at least one injector, known as the root injector, which is globally created for our application at the very beginning. The services marked with providedIn: 'root' are provided here
+Բայց երբ app ավելի complex դառնում, ավելի շատ Injectorner են պետք լինում։ ElementInjectors are injectors created for each DOM node; for example, when we render a component somewhere in a template, it gets an ElementInjector,
+which is empty by default unless something is added to that component’s providers array. ModuleInjectors, on the other hand, were created for NgModule-level DI and were used when ElementInjectors failed to find a 
+dependency in their registry. 
