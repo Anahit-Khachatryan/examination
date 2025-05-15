@@ -25,3 +25,9 @@ Any Angular application has at least one injector, known as the root injector, w
 Բայց երբ app ավելի complex դառնում, ավելի շատ Injectorner են պետք լինում։ ElementInjectors are injectors created for each DOM node; for example, when we render a component somewhere in a template, it gets an ElementInjector,
 which is empty by default unless something is added to that component’s providers array. ModuleInjectors, on the other hand, were created for NgModule-level DI and were used when ElementInjectors failed to find a 
 dependency in their registry. 
+when we reach the root injector, there is one more level called the NullInjector, which is the parent of the root injector. NullInjector is special, as it always throws an error when we attempt a dependency lookup on it. This is what we see when we get
+the NullInjectorError: No provider for Something! message. It means that Angular attempted to look up a dependency, reached the root level, didn’t find it there,
+then went one level up to the NullInjector, and, as always, threw an error
+էջ 52-կարևոր, we write a directive, we will very likely need the reference to the element on which the directive is called, We do this by injecting the ElementRef, which, in turn, is provided
+on the ElementInjector of this particular directive instance. The same directive can be applied in many different parts of the application, so the ElementRef instance will
+be different each time and determined by its own injector. Essentially, we have a tree of dependencies/injectors in which the instances of the same token can be different
