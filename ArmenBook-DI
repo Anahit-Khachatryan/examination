@@ -35,3 +35,16 @@ be different each time and determined by its own injector. Essentially, we have 
 The inject function
 1,Կարանք օգտագործենք ոչ միայն class-ում այլ օրինակ ֆունկցիաներում և այլն
 2, էլ constructor մենակ գրելու իմասը չկա դրա համար, inject-ով անում ենք
+3. չես կարա ngOnInit-ում կանչես -this.isAuth$ = isAuth(); էջ 58
+4․ էն ժամանակ երբ մեր InjectionToken էինք սարքում, const CONSTANTS = { 
+ dateFormat: 'dd/MM/yyyy',
+};
+export const Constants = new InjectionToken('Constants', {
+ factory() {
+return CONSTANTS; 
+ },
+ providedIn: 'root', 
+}), հետո ուզում էինք օգտագործել գրում էինք էսպես
+export class MyComponent {
+ constructor(@Inject(Constants) constants: typeof CONSTANTS);
+}, իսկ հիմա ուղղակի գրում ենք constants = inject(Constants)
