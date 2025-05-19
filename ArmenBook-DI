@@ -50,7 +50,29 @@ export class MyComponent {
 }, իսկ հիմա ուղղակի գրում ենք constants = inject(Constants)
 5. Extend-ի դեպքում ինչ կար parent-ի constructor-ում գրում էինք child constructor-ում ու super-ով կանչում, իսկ հիմա inject-ով դրա կարիքը չկա
 6․Functional guards, resolvers, and interceptors ,- guards ընդամենը մի ֆունկցիա ունի, օրինակ canActivate ու միակ նպատակը որ class-ա, DI-ի համար են արել, հիմա արդեն ֆ-ով ենք անում ու իմպլեմենտ է անում CanActivateFn-ը
-resolvers- when developing complex web apps is ensuring some data is loaded via an HTTP request before rendering the component that requires that data
+resolvers- when developing complex web apps is ensuring some data is loaded via an HTTP request before rendering the component that requires that data- էս դեպքում էլ ResolveFn<Employee> - interface ենք implement անում, 
+որպես դատա ստանում է type of data , որը որ վերադարձնելու է resolver-ը, ու գրանցում ենք էսպես resolve: { employee: employeeDetailsResolver }
+interceptors -  adding authentication tokens to HTTP request headers so that the API can verify the user’s identity and permissions.HttpInterceptorFn interface e implement anum, իսկ register է անում export const appConfig: ApplicationConfig = {
+ providers: [
+ provideRouter(routes),
+ provideHttpClient(
+withInterceptors([authInterceptor]),
+ ),
+ ],
+};
+Եթե օրինակ upgrade ենք ուզում անել պրոյեկտը, որ լրիվ չփոխենք ֆունկցաիյի  ձեռքով, կարանք convert անենք օգտագործելով՝ canActivate: mapToCanActivate([AuthGuard]) The mapToCanActivate function will convert the array of class-based guards to an
+array of CanActivateFn functions, which keeps them compatible with the new APԻ, MapTo բոլորի համար կա՝ mapToResolve, mapToCanMatch ․․․ 
+Interceptor-ինը մի քիչ տարբերա - կարդա էջ 68, օրինակ ոնց ենք գրանցում HTTP_INTERCEPTORS InjectionToken, հիմա withInterceptors - standalone setup-ի համար, իսկ withInterceptorsFromDi թույլ է տալիս որ  և ֆունկցիոնալ և class-based interceptor-ը օգտագործել
+{
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: FundProfileInterceptor,
+      multi: true,
+    },
 Թերությունները՝
 1․ էջ 61- հիմանկանում UNit test-ի մասինա խոսում, ու մեկ էլ որ  it still needs to be called in an injection context- ու դա որոշ ոչ xperienced developer-ի համար կարա confusion լինի
 
