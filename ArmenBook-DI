@@ -48,3 +48,10 @@ return CONSTANTS;
 export class MyComponent {
  constructor(@Inject(Constants) constants: typeof CONSTANTS);
 }, իսկ հիմա ուղղակի գրում ենք constants = inject(Constants)
+5. Extend-ի դեպքում ինչ կար parent-ի constructor-ում գրում էինք child constructor-ում ու super-ով կանչում, իսկ հիմա inject-ով դրա կարիքը չկա
+6․Functional guards, resolvers, and interceptors ,- guards ընդամենը մի ֆունկցիա ունի, օրինակ canActivate ու միակ նպատակը որ class-ա, DI-ի համար են արել, հիմա արդեն ֆ-ով ենք անում ու իմպլեմենտ է անում CanActivateFn-ը
+resolvers- when developing complex web apps is ensuring some data is loaded via an HTTP request before rendering the component that requires that data
+Թերությունները՝
+1․ էջ 61- հիմանկանում UNit test-ի մասինա խոսում, ու մեկ էլ որ  it still needs to be called in an injection context- ու դա որոշ ոչ xperienced developer-ի համար կարա confusion լինի
+
+
