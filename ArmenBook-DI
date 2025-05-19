@@ -31,3 +31,7 @@ then went one level up to the NullInjector, and, as always, threw an error
 էջ 52-կարևոր, we write a directive, we will very likely need the reference to the element on which the directive is called, We do this by injecting the ElementRef, which, in turn, is provided
 on the ElementInjector of this particular directive instance. The same directive can be applied in many different parts of the application, so the ElementRef instance will
 be different each time and determined by its own injector. Essentially, we have a tree of dependencies/injectors in which the instances of the same token can be different
+
+The inject function
+1,Կարանք օգտագործենք ոչ միայն class-ում այլ օրինակ ֆունկցիաներում և այլն
+2, էլ constructor մենակ գրելու իմասը չկա դրա համար, inject-ով անում ենք
