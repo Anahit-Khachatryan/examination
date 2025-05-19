@@ -73,7 +73,19 @@ Interceptor-ինը մի քիչ տարբերա - կարդա էջ 68, օրինակ
       useClass: FundProfileInterceptor,
       multi: true,
     },
-Թերությունները՝
+Թերությունները DI՝
 1․ էջ 61- հիմանկանում UNit test-ի մասինա խոսում, ու մեկ էլ որ  it still needs to be called in an injection context- ու դա որոշ ոչ xperienced developer-ի համար կարա confusion լինի
 
-
+DI lookup-ի մասին էջ 69
+DI tree search սկսում է current component-ից մինչև nullInjector: Բայց մենք նաև կարանք նշենք, թե որտեղից ենք ուզում lookup սկսի, օգտագործելով հատուկ decorators like Self, Optional, SkipSelf, and Host
+@Optional , եթե չգտնի, վերադարձնում է null, ոչ թե error է շպրտում։ UseCase - երբ որոշ value համար provide անում global value, but a component wants to use a default one if the global one is
+not provided. Սրա օրինակ հետո ինքը բերում է Truncating text directive-ի օրինակով, լավնա
+@Self - —This decorator limits the search for a given dependency to the component’s own ElementInject,  This can be useful if the component wants to have its own separate
+instance of some service
+SkipSelf - parent inject-ումա նայում ․@SkipSelf can be used in some scenarios to enforce using a global provider instead of a local one
+Host -սա ման է գալիսիրա ու parent-ի մեջ։  where we want to use the same provider as the parent list in the child item
+export class MyComponent {
+ someDependency = inject(SomeDependency, {optional: true, skipSelf: 
+true});
+}
+ Truncating text with DI- էջ 70 լավնա կարդալ
