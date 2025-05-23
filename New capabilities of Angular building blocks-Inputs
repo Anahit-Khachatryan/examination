@@ -19,4 +19,9 @@ numberAttribute and booleanAttribute
 @Input({transform: booleanAttribute}) booleanProperty = false;
 @Input({transform: numberAttribute}) numberProperty = 0
 
+Activated route-i հետ կապված
+Օրինակ որ լիստ էինք ունենում, ու գնում էինք դիթեյլս, ActivatedRoute-ին էինք Subscribe անում, id-ն get անում, ու համապատասխան փոփոխությունը անում։ Հիմա հնարավորություն կա withComponentInputBinding ավելացնել, և routing-ում եթե գրել ես օրինակ id, ունենում ես նույնանուն input
+ @Input({transform: numberAttribute}) id!: numbe և ինքը արժեքը վերցնում է
+provideRouter(routes, withComponentInputBinding()),
+The binding only works for routed components. Եթե ունենք կոմպոնենտ որ ռենդեռա լինում մյուս կոմպոնենտի մեջ, սա չի աշխատի
 
