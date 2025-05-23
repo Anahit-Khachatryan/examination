@@ -1,4 +1,5 @@
 Required input
+
 @Input() projectId: number; եթե գրենք այսպես, ու input-ին default value չտանք, error կտա Property 'projectId' has no initializer and is not definitely assigned in the constructor. Եթե input required են, այժմ գրում ենք այսպես, առաջվա
 նման error hanleingner-ի և այլն
 To address this, Angular v16 added required input properties. From now on, we
@@ -6,9 +7,16 @@ can make any inputs required, and the compiler will ensure those values are prov
 wherever necessary. As mentioned, it will be done in compile-time and will immediately show errors in the template where we use the component but omit a required
 input. @Input({required: true}) projectId!: number;
 Now if we try to use this without providing the input’s value, we will receive an error.
-transform input - երբ օրինակ որպես input կարանք ստանանք ֆայլերի տեսակներ, թե որոնք են հնարավոր upload անել, մեր component-ում եթե առանց էս transformi անեինք, պետքաա ունենայինք getter ֆունկցիա որը input.split(,), հետո 
+
+transform input - 
+երբ օրինակ որպես input կարանք ստանանք ֆայլերի տեսակներ, թե որոնք են հնարավոր upload անել, մեր component-ում եթե առանց էս transformi անեինք, պետքաա ունենայինք getter ֆունկցիա որը input.split(,), հետո 
 ֆայլՍելեքթի ժամանակ այդ ֆ-ն օգտագործեինք, բայց սա ունենում է խնդիրներ - this will trigger change detection multiple times as we are using the getter, which is essentially a function, in the template - էջ 80-մանրամասն
 @Input({
 transform: (value: string) => value.split(','),
  }) 
+
+numberAttribute and booleanAttribute
+@Input({transform: booleanAttribute}) booleanProperty = false;
+@Input({transform: numberAttribute}) numberProperty = 0
+
 
