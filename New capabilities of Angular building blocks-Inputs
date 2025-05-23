@@ -7,7 +7,7 @@ wherever necessary. As mentioned, it will be done in compile-time and will immed
 input. @Input({required: true}) projectId!: number;
 Now if we try to use this without providing the input’s value, we will receive an error.
 transform input - երբ օրինակ որպես input կարանք ստանանք ֆայլերի տեսակներ, թե որոնք են հնարավոր upload անել, մեր component-ում եթե առանց էս transformi անեինք, պետքաա ունենայինք getter ֆունկցիա որը input.split(,), հետո 
-ֆայլՍելեքթի ժամանակ այդ ֆ-ն օգտագործեինք, բայց սա ունենում է խնդիրներ - this will trigger change detection multiple times as we are using the getter, which is essentially a function, in the template
+ֆայլՍելեքթի ժամանակ այդ ֆ-ն օգտագործեինք, բայց սա ունենում է խնդիրներ - this will trigger change detection multiple times as we are using the getter, which is essentially a function, in the template - էջ 80-մանրամասն
 @Input({
 transform: (value: string) => value.split(','),
  }) 
