@@ -27,4 +27,11 @@ The binding only works for routed components. Եթե ունենք կոմպոնե
 
 Inputs for dynamic component
 Անընդհատ app-loader component-ի մեջ գրելու փոխարեն, գրում ենք loaderComponent structural directive - սա խառնա կարդալ 85-րդ էջում
+from Angular v16.2, there is a new way of passing inputs to components dynamically rendered using *ngComponentOutlet
+<ng-container *ngComponentOutlet="actionsSection; inputs: {candidateId: 
+candidate.id}"></ng-container>
 
+ Host directives
+ Sometimes several directives are often used together, and it makes perfect sense to us to be able to create a parent directive that will call the other ones, instead of constantly spelling them out, 
+or if we have a directive that uses the functionality of another directive while adding some of its own; but again, there was no real and official way of doing this. 
+The good news is, starting from Angular v15, a new concept of host directives has been added to the framework that allows us to add directives to another directive when the latter is applied. Let us see it in action
