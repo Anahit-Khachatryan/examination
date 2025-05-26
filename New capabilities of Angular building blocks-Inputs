@@ -25,3 +25,6 @@ Activated route-i հետ կապված
 provideRouter(routes, withComponentInputBinding()),
 The binding only works for routed components. Եթե ունենք կոմպոնենտ որ ռենդեռա լինում մյուս կոմպոնենտի մեջ, սա չի աշխատի
 
+Inputs for dynamic component
+Անընդհատ app-loader component-ի մեջ գրելու փոխարեն, գրում ենք loaderComponent structural directive - սա խառնա կարդալ 85-րդ էջում
+
