@@ -11,3 +11,6 @@ takeUntil(destroy$),
 
 takeUntilDestroyed operator
 takeUntilDestroyed import e arvum @angular/core/rxjs-interop ու անում է նույնը ինչ Subject-ով էինք անում, unsubscribe է լինում, երբ component-ը destroy է լինում
+էջ 113-ի տակի մասում աշխատանքը մանրամասն ասումա դա նայել  - թե ոնց հասկանա որ injection constext-ումա, դրա համար գրում ենք destroyRef = inject(DestroyRef); takeUntilDestroyed(this.destroyRef), քանի որ inject ֆունկցիան օրինակ չէինք կարա գրեինք ngOnit-ում, 
+էջ 121, custom operator է սարքում
+
