@@ -52,11 +52,31 @@ this.form.events.subscribe(() => {
 NgOptimizedImage directive
 <img
  [ngSrc]="employee.profilePicture" 
- width="20" height="20"/> -Uses ngSrc instead of src to utilize the NgOptimizedDirective.This directive requires us to provide width and height for the image.
+ width="20" height="20"/> -Uses ngSrc instead of src to utilize the NgOptimizedDirective.This directive requires us to provide width and height for the image. Ու եթե սա դնենք ու բացենք browser-ում նայենք, կավելանա այս տողերը 
+" loading="lazy" fetchpriority="auto" ։  Lazy loading նշանակում է որ այն լոադ չի լինի մինչև viewport-ում չհայտնվի։ fetchpriority - ցույց է տալիս ինչքան արագ պետքա լոադ լինի համեմատած մյուսներին։ We can set
+this priority to be high or low, while auto, the default setting, means the browser itself will decide which images to load first
+<img [ngSrc]="employee.profilePicture" width="50" height="50" [alt]="employee.firstName" priority / եթե ուզում ենք օրինակ սա ամենակարևորնա, առաջինը լինի գրում ենք priority
+ If we want those images to be loaded immediately (even when not in the viewport), we can just set the loading input -<img [ngSrc]="project.image" width="100" height="100" loading="eager"/ This way, the default lazy setting will be overridden. 
+
+Srcsets and image loaders
+Մոբայլ վերսիայում responsive-ությունը ապահովելու համար css-նա օգնում, բայց նկարների պահով կարա էնպես նորմալ լինի, մոբայլով չէ։ Դրա համար օգտագործում ենք This can be done via the
+srcset and sizes attributes, but with NgOptimizedDirective we can just put the sizes we prefer and it will generate the srcset automatically for us -<img [ngSrc]="project.image" width="100" height="100" loading="eager" 
+sizes="100vw, 50vw"/>
+CDNs-մաինս 99 էջում
 
 
+Fetch-based HttpClient
+One of the most well-known tools Angular provides, the HttpClient service, has previously utilized the old XMLHttpRequest API to make HTTP calls. This caused problems
+when running Angular in NodeJS environments (like server-side rendering in an
+Express app with Angular Universal), as NodeJS does not have an implementation of
+XMLHttpRequest and instead uses fetch starting from Node v18.
 
+provideHttpClient(withFetch())
 
+  loadComponent: () =>
+      import('./user-list/user-list.component').then(
+        (m) => m.UserListComponent,
+      ),
 
 
 
