@@ -1,0 +1,13 @@
+debounceTime-ի համար հետաքրքիրա անում, որ բոլոր կոմպոնենտերում չսարքի մի հատ ընդհանուր createSearch ֆունկցիա է սարքում, ու արդեն բոլոր տեղերում օգտագործում
+export function createSearch<T>(control: FormControl<T>) {
+ const destroyRef = inject(DestroyRef); -? Essentially, it is a reference to the destruction of the context in which the function is invoked. 
+ const destroy$ = new Subject<void>();
+ destroyRef.onDestroy(() => destroy$.next());
+ return control.valueChanges.pipe(
+debounceTime(500),
+takeUntil(destroy$),
+ );
+}
+
+takeUntilDestroyed operator
+takeUntilDestroyed import e arvum @angular/core/rxjs-interop ու անում է նույնը ինչ Subject-ով էինք անում, unsubscribe է լինում, երբ component-ը destroy է լինում
