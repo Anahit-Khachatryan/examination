@@ -31,7 +31,41 @@ from Angular v16.2, there is a new way of passing inputs to components dynamica
 <ng-container *ngComponentOutlet="actionsSection; inputs: {candidateId: 
 candidate.id}"></ng-container>
 
- Host directives
+ Host directives - Սա կարդալ , էդքան էլ լավ չեմ հասկանում
  Sometimes several directives are often used together, and it makes perfect sense to us to be able to create a parent directive that will call the other ones, instead of constantly spelling them out, 
 or if we have a directive that uses the functionality of another directive while adding some of its own; but again, there was no real and official way of doing this. 
-The good news is, starting from Angular v15, a new concept of host directives has been added to the framework that allows us to add directives to another directive when the latter is applied. Let us see it in action
+The good news is, starting from Angular v15, a new concept of host directives has been added to the framework that allows us to add directives to another directive when the latter is applied. Let us see it in actionշ
+
+Type-safe reactive forms
+Թեկուզ control-ին տալիս ենք թայփ, բայց this.form.value any-ա լինելու, ու հետևաբար ինչ ուզենք կարանք փոխանցենք
+Բայց հիմա արդեն ճանաչում է ինչ type ես տվել, Partial-ով,քանի որ մտածում է որ ցանկցած fieldi դու կարաս արժեք չտաս էլ։ Բայց քանի որ դրա համար մենք ունենք վալիդատորներ, մեկա սկզբից ստուգում ենք form-ան վալիդա նոր անում եմ
+using the nonNullable FormBuilder is a good practice for all forms that we definitely know cannot contain null values -  this.formBuilder.nonNullable.group կամ nonNullable: true օգտագործելով firstName: new FormControl('', {nonNullable: true, validators: 
+[Validators.required]}),
+However, in v18, a new property called events has been added to all FormControls
+(including FormGroup and FormArray). Essentially, events is an combined observable
+that emits every time the control changes its value, validity, or dirty status. We can subscribe to it in the same way we did with distinct event observables:
+this.form.events.subscribe(() => {
+ // perform some logic here
+})
+
+
+NgOptimizedImage directive
+<img
+ [ngSrc]="employee.profilePicture" 
+ width="20" height="20"/> -Uses ngSrc instead of src to utilize the NgOptimizedDirective.This directive requires us to provide width and height for the image.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
