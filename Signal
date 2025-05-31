@@ -8,4 +8,20 @@ const addName = (name: string) => names.update(value => [...value, name]);
 addName('John');
 console.log(names())
 However, signals that are created manually, as in our examples in the previous section, are just object wrappers around values, so they will be garbage collected the same way other, conventional properties are
-136 էջի վերջին մասում ասումա, թե ոնց ֆունկցիա կանչելը էս դեպքում perfomance-ի վրա չի ազդում
+136 էջի վերջին մասում ասումա, թե ոնց ֆունկցիա կանչելը template-ում էս դեպքում perfomance-ի վրա չի ազդում
+Computed signals
+RXJS-որ ուզում էինք նոր observebla ստանային օգտագործում էինք օպերատորները, Signal-ի դեպքում computed-ա
+Էս օրինակը լավնա, թե ոնց թեկուզ մի քանի անգամ կանչես, մեկա ինքը մի անգամա ռեկալկուլեյթ անում ու արեժքը պահում, երբ ուզում ես ինքը ուղղակի տալիսա
+const a = signal(2);
+const b = signal(3);
+const sum = computed(() => {
+ console.log('Recalculating');
+ return a() + b();
+});
+sum();
+sum();
+sum()
+տhe signals they depend on changes, meaning that reading its value will not (in general) trigger recalculation. 
+
+Ու եթե չկանչես էլ սիգնալները, ինքը ոչ մի անգամ չի աշխատի-This makes sense, as the computed function assumes there is no need to perform a computation if the value is not requested by anyone- էջ 140 լավնա
+if we create a computed signal in a component, it will be destroyed together with the component when the latter is removed from theDOM tree, meaning that computed signals continue to be compliant with this rule
