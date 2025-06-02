@@ -56,5 +56,18 @@ effect(() => {
 մյուսը օրինակ browser-ի tab-ի Title-ի փոփոխումը , եթե կատարվում է համաձայն ինչ որ name-ի, WORKING WITH CANVAS
 
 Converting observables to signal
+էջ 148, Օգտագործում ենք toSignal - որը վերադարձնում է Signal և WritableSignal չի։
+Another important thing to remember is that, similar to the effect function, the toSignal function also only works in an injection context. This is because, under the hood, the function subscribes to the observable and injects the DestroyRef to unsubscribe from 
+it automatically when, for example, the component in which it has been called gets destroyed.
+էջ 149 deleteRequest(request: TimeOffRequest) {
+ this.requests = toSignal(
+ this.timeOffRequestService
+.deleteRequest(request.id)
+.pipe(switchMap(() => this.timeOffRequestService.getRequests())),
+ { initialValue: this.requests(), injector: this.injector }
+ );
+}
 
+ Converting signals to observables
+Այս դեպքում էլ օգտագործում ենք toObservable ու արդեն անսինխրոն է աշխատում
 
