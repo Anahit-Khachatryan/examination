@@ -1,1 +1,20 @@
 
+Երբ update-ենք կանչում, էս կոդը կաշխատի նույնիսկ, եթե օրինակ age իրականում 20 էլ էղելա, սա կատարվում է նրա համար, որ referential հավասարություն է ստուգելու։ Ու դրա համար equal էր գրել ու պայմանը, թե օրինակ id-ի հավասարությամբ ստուգի, բայց check արեցի իմ մոտ 
+էնպես էլ re--evaluating չաշխատեց, չգիտեմ ինչի։
+fullName = computed(() => {
+ console.log('Re-evaluating');
+ return `${this.user().firstName} ${this.user().lastName}`;
+ });
+changeUser() {
+ this.user.update(value => ({
+...value,
+age: 20, 
+ }));
+ } 
+
+Computed և effect ֆունկցիաները re-executed են լինում, երբ սիգնալներից մեկը փոխում է իր արժեքը։ Բայց օրինակ կա դեպք, ենթադրենք օգտագործում ենք օրինակ dateTime, որը անընդհատ փոփոխվում է, բայց էդ computed չես ուզում փոխի, օրինակ պետք է լինում դրա ժամանակ տպել օրինակ
+երբ է անունը փոխվել, ոչ թե անընդհատ, այդ դեպքում  օգտագործում ենք untracked ֆունկցիան
+dateTime = toSignal(interval(900).pipe(map(() => new Date())), 
+{initialValue: new Date()}); 
+
+Manual cleanup
