@@ -25,3 +25,36 @@ sum()
 
 Ու եթե չկանչես էլ սիգնալները, ինքը ոչ մի անգամ չի աշխատի-This makes sense, as the computed function assumes there is no need to perform a computation if the value is not requested by anyone- էջ 140 լավնա
 if we create a computed signal in a component, it will be destroyed together with the component when the latter is removed from theDOM tree, meaning that computed signals continue to be compliant with this rule
+
+Effects
+Sometimes, instead of calculating a new value that will dynamically change when andependency changes, we just want to perform some “unrelated” action whenever a signal changes its values. For example, we might want to send an HTTP request that
+would track a user’s action or maybe set a FormControl’s value based on some signal or something else.
+Signal effects are always asynchronous.This means that if during one function execution the value of a signal that an effect watches changes several times, we will receive only the last one and perform the effect’s logic on it once
+Similar to the inject function, we can only register effects in contexts where the DI tree is available.
+Եթե առանձին մեթոդի մեջ է գրվում,պետք է փոխանցել կոմպոնենտի ինջեկտորի ռեֆերենսը՝ - այս մասը մի հատ ուրիշ տեղ էլ կարդալ, որովհետև հիմա առանց constructor-ում էլ արեցի եղավՃ - էջ 144
+private readonly injector = inject(Injector);
+someMethod() {
+ effect(() => {
+console.log(this.someSignal())
+ }, {injector: this.injector});
+}
+
+EFFECTS CAN BE STORED IN COMPONENT PROPERTIES AND DESTROYED EARLIER
+ log = effect(() => { 
+ console.log(`Count is ${this.count()}`); 
+ })
+ removeLogging() {
+ this.log.destroy(); 
+ }
+
+Effect-ում, որ ուզում ես update անես ինչ որ սիգնալ error է տալու, եթե պետքա անում ենք էսպես՝ {allowSignalWrites: true}
+effect(() => {
+ this.count.update(c => c + 1);
+}, {allowSignalWrites: true})
+
+էջ 147, Պետք է աշխատել քիչ գրել use effect, էն դեպքերում երբ պետքա օրինակ լինում, պահել օրինակ localStorage-ում, կամ CALLING THIRD-PARTY API- օրինակ ենթադրենք պետք է ինչ որ սիգնալից կախված ինչ որ formControl-ի value set արվի, կամ disable արվի, 
+մյուսը օրինակ browser-ի tab-ի Title-ի փոփոխումը , եթե կատարվում է համաձայն ինչ որ name-ի, WORKING WITH CANVAS
+
+Converting observables to signal
+
+
