@@ -31,4 +31,21 @@ effect(() => {
 Եթե մենք ունենք toSignal-այսինքն observable սարքում ենք սիգնալ, բայց initial value չենք տալիս, քանի որ օրինակ գիտենք ինքը անսիխրոն չի, դրա ժամանակ կարանք գրենք requireSync
 someSignal = toSignal(of(1, 2, 3), {requireSync: true}), իսկ եթե requireSync գրես բայց տաս անսինքով աշխատող մի բան error կքցի
 
-
+The nature of signal- էջ 159-lifecycle գրաֆիկ կա, ու հետաքրքիրա նայել, signal-i ու effect-ի համար
+How changes to signals propagate 
+both computed signals and effects, automatically track dependencies from the callback function itself and then re-execute when the dependencies change their values
+Computed signal’s callback will start executing only when it is read for the first time, regardless of how many times the source signals might have changed previously, and then it will only execute when source signals change, regardless of 
+how many times we read its computed value.
+Թե ոնց է կապը change detection-ի ու effect-ի հետ, շատ հետաքրքիր է - գրաֆիկը էջ 162։ Սա պատմումէ ոնց է երբ էֆֆեկտը ռեգիտեռ ես անում, change-detection է աշխատում սկզբից, ու շարունակությունը նայել գրաֆիկով, հետաքրքիրը էնա որ եթե մի քանի անգամ update անես աչժեքը վերջին 
+է տպելու, օրինակ՝
+ constructor() {
+ effect(() => {
+console.log(`Value is ${this.counter()}`);
+ });
+ }
+ update() {
+ this.counter.set(7);
+ this.counter.set(11);
+ this.counter.set(20);
+ }
+}
