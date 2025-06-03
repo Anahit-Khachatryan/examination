@@ -16,5 +16,19 @@ Computed և effect ֆունկցիաները re-executed են լինում, եր�
 երբ է անունը փոխվել, ոչ թե անընդհատ, այդ դեպքում  օգտագործում ենք untracked ֆունկցիան
 dateTime = toSignal(interval(900).pipe(map(() => new Date())), 
 {initialValue: new Date()}); 
+const dateTime = untracked(this.dateTime)
+Կարող է ունենում ենք մի որ լոգիկա, որ պետքա update լինի ինչ որ սիգնալներից կախված, ոչ բոլորի։ Դրա համար օգտագործում ենք untrack, ինքը սիգնալ վերցնումա, արժեքը տալիս, բայց ումից derived է եղել չի հետևում
 
-Manual cleanup
+Manual cleanup - էջ 157 - մի քիչ այլ մասեր էլ կա կարանք կարդալ
+Սիգնալները ավտոմատ դեստռոյ է լինում, երբ իր injection context destroy է լինոՄ։ Եթե հանկարծ ուզես դու control Անես, գրում ես էսպես՝
+effect(() => {
+ doSomethinWithASignal(someSignal());
+}, {manualCleanup: true})
+
+7.1.4 Readonly signals and synchronizing with RxJS
+Ենթադրենք ունենք writable signal, որը սերվիսում կարանք փոխենք, բայց ուզում ենք որտեղ որ Inject արվի էդտեղ չկարողանանք, դրա համար օգտագործում ենք asReadonly՝
+ readonly data = this.#data.asReadonly()
+Եթե մենք ունենք toSignal-այսինքն observable սարքում ենք սիգնալ, բայց initial value չենք տալիս, քանի որ օրինակ գիտենք ինքը անսիխրոն չի, դրա ժամանակ կարանք գրենք requireSync
+someSignal = toSignal(of(1, 2, 3), {requireSync: true}), իսկ եթե requireSync գրես բայց տաս անսինքով աշխատող մի բան error կքցի
+
+
