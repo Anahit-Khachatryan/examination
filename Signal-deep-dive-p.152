@@ -37,7 +37,7 @@ both computed signals and effects, automatically track dependencies from the cal
 Computed signal’s callback will start executing only when it is read for the first time, regardless of how many times the source signals might have changed previously, and then it will only execute when source signals change, regardless of 
 how many times we read its computed value.
 Թե ոնց է կապը change detection-ի ու effect-ի հետ, շատ հետաքրքիր է - գրաֆիկը էջ 162։ Սա պատմումէ ոնց է երբ էֆֆեկտը ռեգիտեռ ես անում, change-detection է աշխատում սկզբից, ու շարունակությունը նայել գրաֆիկով, հետաքրքիրը էնա որ եթե մի քանի անգամ update անես աչժեքը վերջին 
-է տպելու, օրինակ՝
+է տպելու, օրինակ՝counter = signal(0)
  constructor() {
  effect(() => {
 console.log(`Value is ${this.counter()}`);
@@ -48,4 +48,19 @@ console.log(`Value is ${this.counter()}`);
  this.counter.set(11);
  this.counter.set(20);
  }
-}
+} կտպի 0 ու 20
+
+State management- notification-ի implementation
+Սերվիսի սիգնալը, երբ է ստեղծվում? - եթե գրում ենք providedIn: 'root ու inject ենք անում component-ում, Երբ UI-ում ինչ որ մասում օգտագործվում է, էդ ժամանակ էլ ստեղծվում է։ Կախված է նրանից թե սերվիսը ոնց ենք Ինյեցտ anwum
+Էջ 168- կարելիա կարդալ, որ ToSignal օգտագործում ես էդ մասին է -  the toSignal will subscribe to the observable, a web socket might be created as soon as we subscribe to this observable։ Բացատրումա որ component-ը destroy են լինում, ոնցա դեռ subscription մնում, ու ինչ
+հետևանքներա ունենում
+
+ Making signal into an input property - էջ 175
+export class SomeComponent {
+ #someSignal = signal('Name');
+ @Input() 
+ set someSignal(value: string) {
+ this.#someSignal.set(value);
+ }
+} - ինչ որ գրածա գլոիխ 10-ում նոր լուծման մասին կգրեն
+Everything else - էջ 176-ում խոսում է viewChild, contentChild, output ... սրանց մասին, որ արժե նայել
