@@ -17,4 +17,8 @@ defer - Only standalone components can be deferred, - 1
 Angular deferred the loading of this component in the simplest possible way: it started loading it as soon as we visited this page, բայց մենք կարող ենք պայմաններ տան defer-ին երբ անի, օրինակ այսպես @defer (when isConfirmationOpen) - Սա մի անգամա աշխաուն, 
 եթե դառնա հետո false, component-ը չի անհետանա
 կարող ենք օգտագործել on interaction(deleteButton) - orinak espes - The interaction option here helps define an event, which will trigger Angular to load the deferred component
-on viewport - 
+on viewport - սրա ժամանակ պետք է նաև Placeholder լինի-15 256 սրա մասին - placeholder-ով որոշակի կոնտենտ ենք ցույց տալիս, նախքան deffered եղած կոմպոնենտով փոխարինելը
+ @loading,@error -
+@defer (on viewport; prefetch on timer(2s)) 
+
+Zoneless Angular applications
