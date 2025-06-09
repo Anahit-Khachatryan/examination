@@ -1,1 +1,20 @@
+*ngIf
+This new syntax works the same way as NgIf and will dynamically add or remove the
+elements inside of the curly braces when the condition changes. However, it has a
+number of benefits:
+ There are no imports, as we have seen.
+ We can place multiple unrelated DOM elements inside the curly braces, while
+NgIf only worked on a single element.
+ It is more readable.
+ There is no confusion as to where an if statement starts and ends
+ we are still able to use the as syntax` as project-
 
+*ngFor @for(item of items; let i = $index, count = $count այսպես էլ կարանք գրենք, ուղղակի էսպես էլ   {{$index + 1}}/{{$count}
+@empty
+@switch -ի տարբերություն JS-ի switch,  break statement չունի
+
+defer - Only standalone components can be deferred, - 1
+Angular deferred the loading of this component in the simplest possible way: it started loading it as soon as we visited this page, բայց մենք կարող ենք պայմաններ տան defer-ին երբ անի, օրինակ այսպես @defer (when isConfirmationOpen) - Սա մի անգամա աշխաուն, 
+եթե դառնա հետո false, component-ը չի անհետանա
+կարող ենք օգտագործել on interaction(deleteButton) - orinak espes - The interaction option here helps define an event, which will trigger Angular to load the deferred component
+on viewport - 
