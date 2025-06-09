@@ -21,4 +21,11 @@ on viewport - սրա ժամանակ պետք է նաև Placeholder լինի-15 2
  @loading,@error -
 @defer (on viewport; prefetch on timer(2s)) 
 
-Zoneless Angular applications
+Zoneless Angular applications -էջ 260
+Zone.js -is a JavaScript library that allows developers to create special execution contexts (called zones) and run some code inside those zones.
+Angular will perform achecking top-down, meaning it will start from the very root component and change detect every single component in our application
+Երբ template-ում ունենում ենք ֆունկիցա, որը կանչվցում է, ինքը անընդհատ աշխատում է, քանի որ մինչև չաշխտացնի չի իմանա փոխվեց թե չէ - էջ 262 - դրա համար pipe-ենք օգտագործում
+ChangeDetectionStrategy.OnPush - now if we mark our component with OnPush, and use only signals, then those signal changes will update the UI but will not trigger change detection for parent components (if they are also OnPush)
+signal inputs - This is a new way to declare input properties on components, which uses a function instead of a decorator and creates an input that is already a signal - id = input.required({ transform: numberAttribute });
+SIGNAL OUTPUTS - selected = output<FileList>(); -էջ 269 @Output() clicked = fromEvent(this.containerElement, 'click');outputFromObservable բանի մասին կա, կարելիա կարդալ
+SIGNAL-BASED VIEWCHILDREN AND CONTENTCHILDREN
