@@ -28,4 +28,9 @@ Angular will perform achecking top-down, meaning it will start from the very roo
 ChangeDetectionStrategy.OnPush - now if we mark our component with OnPush, and use only signals, then those signal changes will update the UI but will not trigger change detection for parent components (if they are also OnPush)
 signal inputs - This is a new way to declare input properties on components, which uses a function instead of a decorator and creates an input that is already a signal - id = input.required({ transform: numberAttribute });
 SIGNAL OUTPUTS - selected = output<FileList>(); -էջ 269 @Output() clicked = fromEvent(this.containerElement, 'click');outputFromObservable բանի մասին կա, կարելիա կարդալ
-SIGNAL-BASED VIEWCHILDREN AND CONTENTCHILDREN
+SIGNAL-BASED VIEWCHILDREN AND CONTENTCHILDREN -էջ 271
+The next question we might have is: how will change detection work then? The
+answer is that in signal-based components, Angular will listen to signal updates
+(and signal updates only) and then perform checking based on a corresponding
+view (this is view-based change detection). Views are either a template of a component or an ng-template inside of it. All structural directives automatically create
+ng-templates. The following listing shows a small example of a component template with different views annotated.
