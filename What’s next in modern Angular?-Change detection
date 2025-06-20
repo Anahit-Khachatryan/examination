@@ -34,3 +34,4 @@ answer is that in signal-based components, Angular will listen to signal updates
 (and signal updates only) and then perform checking based on a corresponding
 view (this is view-based change detection). Views are either a template of a component or an ng-template inside of it. All structural directives automatically create
 ng-templates. The following listing shows a small example of a component template with different views annotated.
+const tasks = inject(ExperimentalPendingTasks); - էջ 275
